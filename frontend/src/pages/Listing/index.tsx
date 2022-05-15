@@ -30,9 +30,13 @@ function Listing() {
         )
     }, [pageNumber]);
 
+    const hadlePageNumber = (newPageNumber : number) => {
+        setPageNuber(newPageNumber);
+    }
+
     return (
         <>
-            <Pagination />
+            <Pagination page={page} onChange={hadlePageNumber}/>
             <div className="container">
                 <div className="row">
                     {page.content.map(movie => (
